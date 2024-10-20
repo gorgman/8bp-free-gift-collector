@@ -53,7 +53,7 @@ if (rewards.length !== 0) {
       todaysRewards = todaysRewards + "; ";
     }
   }
-  let rewardsMD = await fs.readFile("REWARDS.md", "utf8");
+  let rewardsMD = await fs.readFile("README.md", "utf8");
   rewardsMD += todaysRewards;
-  await fs.writeFile("REWARDS.md", rewardsMD);
+  await fs.writeFile("README.md", rewardsMD);
 }
