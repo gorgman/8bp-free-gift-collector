@@ -2,7 +2,7 @@ name: Collect free Gifts
 
 on:
   schedule:
-    - cron: "0 10 * * *" # 10:00 AM UTC
+    - cron: "0 15 * * *" # 3:00 PM UTC
   workflow_dispatch:
 
 jobs:

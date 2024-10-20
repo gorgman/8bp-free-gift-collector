@@ -46,7 +46,7 @@ try {
 if (rewards.length !== 0) {
   const today = new Date();
   let todaysRewards = `| ${today.toLocaleDateString()} | `;
-  for (let i = 0; i < length(rewards); i++) {
+  for (let i = 0; i < rewards.length; i++) {
     if (i === rewards.length) {
       todaysRewards = todaysRewards + " |";
     } else {
