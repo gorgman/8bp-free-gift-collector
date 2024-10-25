@@ -17,3 +17,4 @@
 | :---: | :---: |
 | 10/23/2024 | (Daily Reward - 10/23)(x40); (Trickster Cue Piece)(x1) |
 | 10/24/2024 | (Daily Reward - 10/24)(x40); (Gamechanger Cue Piece)(x1) |
+| 10/25/2024 | (Daily Reward - 10/25)(x40); (Opti Shot Cue Piece)(x2) |
