@@ -22,3 +22,4 @@
 | 10/27/2024 | (Daily Reward - 10/27)(x40); (Spin Wizard Cue Piece)(x1) |
 | 10/28/2024 | (Daily Reward - 10/28)(x40); (Gamechanger Cue Piece)(x1) |
 | 10/29/2024 | (Daily Reward - 10/29)(x40); (Trickster Cue Piece)(x1) |
+| 10/30/2024 | (Daily Reward - 10/30)(x40); (Power Break Cue Piece)(x1) |
