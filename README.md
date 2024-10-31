@@ -23,3 +23,4 @@
 | 10/28/2024 | (Daily Reward - 10/28)(x40); (Gamechanger Cue Piece)(x1) |
 | 10/29/2024 | (Daily Reward - 10/29)(x40); (Trickster Cue Piece)(x1) |
 | 10/30/2024 | (Daily Reward - 10/30)(x40); (Power Break Cue Piece)(x1) |
+| 10/31/2024 | (Daily Reward - 10/31)(x40); (Legacy Strike Cue Piece)(x1) |
