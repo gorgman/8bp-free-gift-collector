@@ -25,3 +25,4 @@
 | 10/30/2024 | (Daily Reward - 10/30)(x40); (Power Break Cue Piece)(x1) |
 | 10/31/2024 | (Daily Reward - 10/31)(x40); (Legacy Strike Cue Piece)(x1) |
 | 11/1/2024 | (Daily Reward - 11/1)(x40); (Power Break Cue Piece)(x2) |
+| 11/2/2024 | (Daily Reward - 11/2)(x40); (Spin Wizard Cue Piece)(x1) |
