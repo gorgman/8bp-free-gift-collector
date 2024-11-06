@@ -29,3 +29,4 @@
 | 11/3/2024 | (Daily Reward - 11/3)(x40); (Strike Zone Cue Piece)(x1) |
 | 11/4/2024 | (Daily Reward - 11/4)(x40); (Trickster Cue Piece)(x1) |
 | 11/5/2024 | (Daily Reward - 11/5)(x40); (Opti Shot Cue Piece)(x1) |
+| 11/6/2024 | (Daily Reward - 11/6)(x1); (Power Break Cue Piece)(x1) |
