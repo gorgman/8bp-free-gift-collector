@@ -11,35 +11,14 @@ const DELAY = 100;
 
   try {
     console.log("Navigating to 8 Ball Pool shop...");
-    await page.goto("https://8ballpool.com/en/shop");
-
-    const loginButton = await page.waitForSelector(
-      `button[data-testid="btn-login-modal"]`
-    );
-
-    if (loginButton) {
-      console.log("Logging in user...");
-      await loginButton.click();
-      await page.type('input[data-testid="input-unique-id"]', USER_UNIQUE_ID, {
-        delay: DELAY,
-      });
-
-      const goButton = await page.waitForSelector(
-        'button[data-testid="btn-user-go"]'
-      );
-      await goButton.click();
-    } else {
-      console.log("Login button not found");
-    }
+    await page.goto(`https://8ballpool.com/en/shop?UniqueID=${USER_UNIQUE_ID}`);
 
     const productCards = await page.$$(".product-list-item");
     for (const card of productCards) {
       const priceButton = await card.$("button");
       const price = await priceButton.evaluate((el) => el.textContent.trim());
-
       if (price === "FREE") {
         await priceButton.click();
-
         const nameElement = await card.$("h3");
         const name = await nameElement.evaluate((el) => el.textContent.trim());
         const quantityElement = await card.$("div > .text-gold");
@@ -47,7 +26,6 @@ const DELAY = 100;
           el.textContent.trim()
         );
         console.log("Claimed:", name);
-
         rewards.push(`(${name})(${quantity})`);
       }
     }
