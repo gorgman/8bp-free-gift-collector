@@ -15,20 +15,3 @@
 
 | Date | Rewards |
 | :---: | :---: |
-| 10/23/2024 | (Daily Reward - 10/23)(x40); (Trickster Cue Piece)(x1) |
-| 10/24/2024 | (Daily Reward - 10/24)(x40); (Gamechanger Cue Piece)(x1) |
-| 10/25/2024 | (Daily Reward - 10/25)(x40); (Opti Shot Cue Piece)(x2) |
-| 10/26/2024 | (Daily Reward - 10/26)(x40); (Strike Zone Cue Piece)(x1) |
-| 10/27/2024 | (Daily Reward - 10/27)(x40); (Spin Wizard Cue Piece)(x1) |
-| 10/28/2024 | (Daily Reward - 10/28)(x40); (Gamechanger Cue Piece)(x1) |
-| 10/29/2024 | (Daily Reward - 10/29)(x40); (Trickster Cue Piece)(x1) |
-| 10/30/2024 | (Daily Reward - 10/30)(x40); (Power Break Cue Piece)(x1) |
-| 10/31/2024 | (Daily Reward - 10/31)(x40); (Legacy Strike Cue Piece)(x1) |
-| 11/1/2024 | (Daily Reward - 11/1)(x40); (Power Break Cue Piece)(x2) |
-| 11/2/2024 | (Daily Reward - 11/2)(x40); (Spin Wizard Cue Piece)(x1) |
-| 11/3/2024 | (Daily Reward - 11/3)(x40); (Strike Zone Cue Piece)(x1) |
-| 11/4/2024 | (Daily Reward - 11/4)(x40); (Trickster Cue Piece)(x1) |
-| 11/5/2024 | (Daily Reward - 11/5)(x40); (Opti Shot Cue Piece)(x1) |
-| 11/6/2024 | (Daily Reward - 11/6)(x1); (Power Break Cue Piece)(x1) |
-| 11/7/2024 | (Daily Reward - 11/7)(x1); (Gamechanger Cue Piece)(x1) |
-| 11/9/2024 | (Daily Reward - 11/9)(4); (Gamechanger Cue Piece)(x1) |

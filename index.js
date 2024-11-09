@@ -4,15 +4,17 @@ import fs from "fs/promises";
 const USER_UNIQUE_ID = "4722012226";
 const DELAY = 100;
 
+const makeRewardData = (imageSrc, name, quantity) => {
+  return `<img src="${imageSrc}" height="25" alt="${name}"/> ${name} X ${quantity}`;
+};
+
 (async () => {
   const browser = await puppeteer.launch({ headless: true, slowMo: DELAY });
   const page = await browser.newPage();
   let rewards = [];
-
   try {
     console.log("Navigating to 8 Ball Pool shop...");
     await page.goto("https://8ballpool.com/en/shop");
-
     const loginButton = await page.waitForSelector(
       `button[data-testid="btn-login-modal"]`
     );
@@ -22,7 +24,6 @@ const DELAY = 100;
       await page.type('input[data-testid="input-unique-id"]', USER_UNIQUE_ID, {
         delay: DELAY,
       });
-
       const goButton = await page.waitForSelector(
         'button[data-testid="btn-user-go"]'
       );
@@ -30,14 +31,16 @@ const DELAY = 100;
     } else {
       console.log("Login button not found");
     }
-
     const productCards = await page.$$(".product-list-item");
     for (const card of productCards) {
       const priceButton = await card.$("button");
       const price = await priceButton.evaluate((el) => el.textContent.trim());
-
       if (price === "FREE") {
         await priceButton.click();
+        const imageElement = await card.$("img");
+        const imageSrc = await imageElement.evaluate((i) =>
+          i.getAttribute("src")
+        );
         const nameElement = await card.$("h3");
         const name = await nameElement.evaluate((el) => el.textContent.trim());
         const quantityElement = await card.$("div > .text-gold");
@@ -45,7 +48,7 @@ const DELAY = 100;
           el.textContent.trim()
         );
         console.log("Claimed:", name);
-        rewards.push(`(${name})(${quantity})`);
+        rewards.push(makeRewardData(imageSrc, name, quantity));
       }
     }
   } catch (error) {
@@ -54,8 +57,6 @@ const DELAY = 100;
     await browser.close();
     console.log("Browser closed.");
   }
-
-  // Adding gifts to README
   if (rewards.length !== 0) {
     const today = new Date();
     const todaysRewards = `| ${today.toLocaleDateString()} | ${rewards.join(
