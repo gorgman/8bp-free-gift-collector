@@ -31,3 +31,4 @@
 | 11/5/2024 | (Daily Reward - 11/5)(x40); (Opti Shot Cue Piece)(x1) |
 | 11/6/2024 | (Daily Reward - 11/6)(x1); (Power Break Cue Piece)(x1) |
 | 11/7/2024 | (Daily Reward - 11/7)(x1); (Gamechanger Cue Piece)(x1) |
+| 11/9/2024 | (Daily Reward - 11/9)(4); (Gamechanger Cue Piece)(x1) |
