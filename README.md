@@ -15,3 +15,4 @@
 
 | Date | Rewards |
 | :---: | :---: |
+| 11/10/2024 | <img src="https://prod-hub-config.8ballpool.com/webshop_20241104_0944/x6K0i7RwxyzJGE_nopivCfU1HGaFJvzonC2htNJdPL5AoHA1fiTWhjqYk7QsBpQuL6hdjPe_cLXjLjnMHXXBsg~kz-NG1xudvrE96XzoioHYniSdsgJ04L4KUY_EUJxI8I.png" height="25" alt="Daily Reward - 11/10"/> Daily Reward - 11/10 X x1; <img src="https://prod-hub-config.8ballpool.com/webshop_20241104_0944/mNnZWuEOnaxrZiFEn0apCZsaxydrm7_45_rCxX7ipZjrua-KLdMHlxKeu77TZwEAUZCsVA52ZIKsmXiDVeUwVQ~kx0MT45xRtcGPIPCqrnGTAezM0yQc5Ind0hQgvrI-xc.png" height="25" alt="Power Break Cue Piece"/> Power Break Cue Piece X x1 |
