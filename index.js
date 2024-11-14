@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs/promises";
+import "path";
 
 const USER_UNIQUE_ID = "4722012226";
 const DELAY = 100;
@@ -58,9 +59,23 @@ const makeRewardData = (imageSrc, name, quantity) => {
     const todaysRewards = `| ${today.toLocaleDateString()} | ${rewards.join(
       "; "
     )} |\n`;
-    let rewardsMD = await fs.readFile("README.md", "utf8");
-    rewardsMD += todaysRewards;
-    await fs.writeFile("README.md", rewardsMD);
+    let prevReadmeContent;
+    if (today.getDate() === 1) {
+      const monthYear = `${String(today.getMonth() + 1).padStart(
+        2,
+        "0"
+      )}-${today.getFullYear()}`;
+      const archiveFileName = path.join("archive", `${monthYear}.md`);
+      await fs.mkdir("archive", { recursive: true });
+      const currentReadme = await fs.readFile("README.md", "utf8");
+      await fs.writeFile(archiveFileName, currentReadme);
+      console.log(`Archived ${archiveFileName}`);
+      prevReadmeContent = await fs.readFile("README.example.md", "utf8");
+    } else {
+      prevReadmeContent = await fs.readFile("README.md", "utf8");
+    }
+    prevReadmeContent += todaysRewards;
+    await fs.writeFile("README.md", prevReadmeContent);
   } else {
     console.log("No free gifts found");
   }
