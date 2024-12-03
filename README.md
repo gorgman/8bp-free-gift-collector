@@ -17,3 +17,4 @@
 | :---: | :---: |
 | 12/1/2024 | <img src="https://prod-hub-config.8ballpool.com/webshop_20241126_1528/kRJ26qKDdiBr7BhDRql2WrGCjCeFmptmjEUzSV4nyT6IGfVzTv-8-r-Q-BRtkWB-VvofUc7CY9ifbsxldEok0Q~sNj_SHAvyngabQPPIdbDvVfHJL_RJMjZugE2GipYfyE.png" height="25" alt="Spin Wizard Cue Piece"/> Spin Wizard Cue Piece X x1 |
 | 12/2/2024 | <img src="https://prod-hub-config.8ballpool.com/webshop_20241126_1528/mNnZWuEOnaxrZiFEn0apCZsaxydrm7_45_rCxX7ipZjrua-KLdMHlxKeu77TZwEAUZCsVA52ZIKsmXiDVeUwVQ~kx0MT45xRtcGPIPCqrnGTAezM0yQc5Ind0hQgvrI-xc.png" height="25" alt="Power Break Cue Piece"/> Power Break Cue Piece X x1 |
+| 12/3/2024 | <img src="https://prod-hub-config.8ballpool.com/webshop_20241126_1528/8PI4-d_WCdZfX89MjpTDzhvZExiSs82ceYsV3TPfPrBD7Zjbrai0rqGWpaBnBKerusaWXi6G3FBR3FHmaATb_Q~gK2G3yYltIZcfsuN4lhxXVq-ktHacK_yO3ac-N6McFA.png" height="25" alt="Legacy Strike Cue Piece"/> Legacy Strike Cue Piece X x1 |
