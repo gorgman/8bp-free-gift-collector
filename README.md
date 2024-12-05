@@ -11,6 +11,11 @@
       <img height="40" width="40" src="https://cdn.simpleicons.org/githubactions/2088FF" />
     </p>
   </div>
+  <p align="center">
+    <a href="https://github.com/aditeyaS/8bp-free-gift-collector/tree/main/archive" aria-label="View previous rewards">
+        <img src="https://img.shields.io/badge/View_previous_rewards-8A2BE2?style=for-the-badge"/>
+    </a>
+  </p>
 </p>
 
 | Date | Rewards |

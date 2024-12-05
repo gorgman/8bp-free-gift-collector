@@ -17,6 +17,19 @@ const makeRewardData = (imageSrc, name, quantity) => {
   return `<img src="${imageSrc}" height="25" alt="${name}"/> ${name} X ${quantity}`;
 };
 
+const getArchivedFileName = (date) => {
+  if (!(date instanceof Date)) {
+    throw new Error("Invalid input, expected a Date object.");
+  }
+  let year = date.getFullYear();
+  let month = date.getMonth(); // 0 - Jan; 11 - Dec
+  if (month === 0) {
+    month = 12;
+    year -= 1;
+  }
+  return `${String(month).padStart(2, "0")}-${year}`;
+};
+
 const URL = "https://8ballpool.com/en/shop";
 const USER_UNIQUE_ID = "4722012226";
 const DELAY = 100;
@@ -79,15 +92,12 @@ const updateReadme = async (rewards) => {
   )} |\n`;
   let prevReadmeContent;
   if (today.getDate() === 1) {
-    const monthYear = `${String(today.getMonth() + 1).padStart(
-      2,
-      "0"
-    )}-${today.getFullYear()}`;
-    const archiveFileName = path.join("archive", `${monthYear}.md`);
+    const archivedFileName = getArchivedFileName(today);
+    const archiveFilePath = path.join("archive", `${archivedFileName}.md`);
     await fs.mkdir("archive", { recursive: true });
     const currentReadme = await fs.readFile("README.md", "utf8");
-    await fs.writeFile(archiveFileName, currentReadme);
-    logMessage("info", `🗄️ Archived ${monthYear}`);
+    await fs.writeFile(archiveFilePath, currentReadme);
+    logMessage("info", `🗄️ Archived ${archivedFileName}`);
     prevReadmeContent = await fs.readFile("README.example.md", "utf8");
   } else {
     prevReadmeContent = await fs.readFile("README.md", "utf8");
