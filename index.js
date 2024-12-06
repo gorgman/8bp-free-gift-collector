@@ -35,7 +35,7 @@ const USER_UNIQUE_ID = "4722012226";
 const DELAY = 100;
 
 const collectRewards = async () => {
-  const browser = await puppeteer.launch({ headless: true, slowMo: DELAY });
+  const browser = await puppeteer.launch({ headless: true, slowMo: DELAY, args:['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
   logMessage("info", `🌐 Navigating to ${URL}`);
   await page.goto(URL);
