@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 import fs from "fs/promises";
 import path from "path";
+import { exit } from "process";
 
 const logMessage = (type, message) => {
   const colors = {
@@ -12,11 +13,9 @@ const logMessage = (type, message) => {
   const color = colors[type] || colors.info;
   console.log(`${color}%s${colors.reset}`, message, "\n");
 };
-
 const makeRewardData = (imageSrc, name, quantity) => {
   return `<img src="${imageSrc}" height="25" alt="${name}"/> ${name} X ${quantity}`;
 };
-
 const getArchivedFileName = (date) => {
   if (!(date instanceof Date)) {
     throw new Error("Invalid input, expected a Date object.");
@@ -35,12 +34,20 @@ const USER_UNIQUE_ID = "4722012226";
 const DELAY = 100;
 
 const collectRewards = async () => {
-  const browser = await puppeteer.launch({ headless: true, slowMo: DELAY, args:['--no-sandbox', '--disable-setuid-sandbox'] });
+  const browser = await puppeteer.launch({
+    headless: true,
+    slowMo: DELAY,
+  });
   const page = await browser.newPage();
+  await page.setUserAgent(
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
+  );
+
   logMessage("info", `🌐 Navigating to ${URL}`);
-  await page.goto(URL);
+  await page.goto(URL, { waitUntil: "networkidle2" });
   const loginButton = await page.waitForSelector(
-    'button[data-testid="btn-login-modal"]'
+    'button[data-testid="btn-login-modal"]',
+    { visible: true }
   );
   if (loginButton) {
     await loginButton.click();
@@ -84,6 +91,7 @@ const collectRewards = async () => {
   }
   return rewards;
 };
+const rewards = await collectRewards();
 
 const updateReadme = async (rewards) => {
   const today = new Date();
@@ -106,7 +114,6 @@ const updateReadme = async (rewards) => {
   await fs.writeFile("README.md", prevReadmeContent);
   logMessage("success", `📝 Updated README`);
 };
-
-const rewards = await collectRewards();
 await updateReadme(rewards);
 logMessage("success", "🤖 Script complete.");
+exit();
