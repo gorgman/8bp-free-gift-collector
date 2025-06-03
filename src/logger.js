@@ -12,5 +12,5 @@ export const logger = (type, message) => {
     reset: "\x1b[0m",
   };
   const color = colors[type] || colors.info;
-  console.log(`${color}%s${colors.reset}`, message, "\n");
+  console.log(`${color}%s${colors.reset}`, message);
 };

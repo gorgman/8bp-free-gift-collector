@@ -45,23 +45,27 @@ export const collectRewards = async (userUniqueID) => {
   let rewards = [];
   const products = await page.$$(".product-list-item");
   logger("info", `💡 ${products.length} products found.`);
-  for (const product of products) {
+  for (const [index, product] of products.entries()) {
     const priceButton = await product.$("button");
     const price = await priceButton.evaluate((el) => el.textContent.trim());
-    if (price === "FREE") {
+    const imageElement = await product.$("img");
+    const imageSrc = await imageElement.evaluate((i) => i.getAttribute("src"));
+    const nameElement = await product.$("h3");
+    const name = await nameElement.evaluate((el) => el.textContent.trim());
+    const quantityElement = await product.$(".amount-text");
+    let quantity = "";
+    if (quantityElement)
+      quantity = await quantityElement.evaluate((el) => el.textContent.trim());
+    logger(
+      "info",
+      `[${index + 1}/${
+        products.length
+      }] Price:${price}; Name:${name}; Quantity:${quantity};`
+    );
+    if (price === "FREE" || price === "Claimed") {
       await priceButton.click();
-      const imageElement = await product.$("img");
-      const imageSrc = await imageElement.evaluate((i) =>
-        i.getAttribute("src")
-      );
-      const nameElement = await product.$("h3");
-      const name = await nameElement.evaluate((el) => el.textContent.trim());
-      const quantityElement = await product.$(".amount-text");
-      const quantity = await quantityElement.evaluate((el) =>
-        el.textContent.trim()
-      );
       rewards.push(makeRewardData(imageSrc, name, quantity));
-      logger("success", `🎉 Claimed: ${name}`);
+      logger("success", `🎉 Claimed: [${index + 1}/${products.length}]\n`);
     }
   }
   await browser.close();
