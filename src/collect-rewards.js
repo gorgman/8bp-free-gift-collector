@@ -62,7 +62,7 @@ export const collectRewards = async (userUniqueID) => {
         products.length
       }] Price:${price}; Name:${name}; Quantity:${quantity};`
     );
-    if (price === "FREE" || price === "Claimed") {
+    if (price === "FREE") {
       await priceButton.click();
       rewards.push(makeRewardData(imageSrc, name, quantity));
       logger("success", `🎉 Claimed: [${index + 1}/${products.length}]\n`);
