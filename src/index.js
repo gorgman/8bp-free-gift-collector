@@ -10,8 +10,11 @@ userUniqueID = userUniqueID.trim();
 
 async function main() {
   const rewards = await collectRewards(userUniqueID);
+
   await updateReadme(rewards);
+
   logger("success", "🤖 Script complete.");
+
   exit();
 }
 main();

@@ -24,6 +24,7 @@ export const collectRewards = async (userUniqueID) => {
 
   logger("info", `🌐 Navigating to ${pageUrl}`);
   await page.goto(pageUrl, { waitUntil: "networkidle2" });
+
   const loginButton = await page.waitForSelector(
     'button[data-testid="btn-login-modal"]',
     { visible: true }
@@ -44,34 +45,42 @@ export const collectRewards = async (userUniqueID) => {
 
   let rewards = [];
   const products = await page.$$(".product-list-item");
-  logger("info", `💡 ${products.length} products found.`);
+  const N = products.length;
+
+  logger("info", `💡 ${N} products found.`);
+
   for (const [index, product] of products.entries()) {
     const priceButton = await product.$("button");
-    const price = await priceButton.evaluate((el) => el.textContent.trim());
+    const price = await priceButton.evaluate((el) =>
+      el.textContent.trim().toUpperCase()
+    );
+
     const imageElement = await product.$("img");
     const imageSrc = await imageElement.evaluate((i) => i.getAttribute("src"));
+
     const nameElement = await product.$("h3");
     const name = await nameElement.evaluate((el) => el.textContent.trim());
+
     const quantityElement = await product.$(".amount-text");
+
     let quantity = "";
     if (quantityElement)
       quantity = await quantityElement.evaluate((el) => el.textContent.trim());
-    logger(
-      "info",
-      `[${index + 1}/${
-        products.length
-      }] Price:${price}; Name:${name}; Quantity:${quantity};`
-    );
+
+    logger("info", `🚲 [${index + 1}/${N}] ${price} ${name}`);
+
     if (price === "FREE") {
+      logger("info", `⏳ Claiming: [${index + 1}/${N}]`);
       await priceButton.click();
       rewards.push(makeRewardData(imageSrc, name, quantity));
-      logger("success", `🎉 Claimed: [${index + 1}/${products.length}]\n`);
+      logger("success", `🎉 Claimed: [${index + 1}/${N}]`);
     }
   }
+
   await browser.close();
   logger("info", "❎ Browser closed.");
-  if (rewards.length === 0) {
-    throw new Error("No rewards found");
-  }
+
+  if (rewards.length === 0) throw new Error("No rewards found");
+
   return rewards;
 };
