@@ -69,7 +69,7 @@ export const collectRewards = async (userUniqueID) => {
 
     logger("info", `🚲 [${index + 1}/${N}] ${price} ${name}`);
 
-    if (price.toUpperCase() === "FREE") {
+    if (price.toUpperCase() === "FREE" || price.toUpperCase() === "CLAIMED") {
       logger("info", `⏳ Claiming: [${index + 1}/${N}]`);
       await priceButton.click();
       rewards.push(makeRewardData(imageSrc, name, quantity));
