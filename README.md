@@ -25,3 +25,4 @@
 
 | Date | Rewards |
 | :---: | :---: |
+| 6/7/2025 | <img src="https://prod-hub-config.8ballpool.com/assets/qIxNRVld8EB1DifzJ5nGC4PXZ-5RrZUdrRHvfPiQv3fXXJUFT8euCPiL01ydg-OGjjd4b6Uvc5HrgpbkZGh7Gw~5tRra3gkTyPEtz_W4gLDVCLe130qWwxF-WL4RJRqNeA.png" height="25" alt="Daily Reward - 6/7"/> Daily Reward - 6/7 x30; <img src="https://prod-hub-config.8ballpool.com/assets/kRJ26qKDdiBr7BhDRql2WrGCjCeFmptmjEUzSV4nyT6IGfVzTv-8-r-Q-BRtkWB-VvofUc7CY9ifbsxldEok0Q~sNj_SHAvyngabQPPIdbDvVfHJL_RJMjZugE2GipYfyE.png" height="25" alt="Spin Wizard Cue Piece"/> Spin Wizard Cue Piece x1 |
